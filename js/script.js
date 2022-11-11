@@ -47,7 +47,7 @@ function showSlides() {
     slides[slideIndex - 1].classList.add("active");
     dots[slideIndex - 1].classList.add("active");
 
-    setTimeout(showSlides, 5000);
+    setTimeout(showSlides, 3000);
 }
 
 // Eventos
