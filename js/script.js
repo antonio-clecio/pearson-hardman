@@ -7,6 +7,10 @@ const desktopLinks = document.querySelectorAll("#navbar a");
 const mobileLinks = document.querySelectorAll("#mobile-navbar a");
 const allLinks = [...desktopLinks, ...mobileLinks];
 
+const slides = document.querySelectorAll(".banner");
+const dots = document.querySelectorAll(".dot");
+let slideIndex = 0;
+
 console.log(allLinks);
 
 // Funções
@@ -20,6 +24,30 @@ function smoothScroll(e) {
         top: offsetTop,
         behavior: "smooth",
     });
+
+    setTimeout(() => {
+        if (menu.classList.contains("menu-active")) {
+            menu.classList.remove("menu-active");
+        }
+    }, 500)
+}
+
+function showSlides() {
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+        dots[i].classList.remove("active");
+    }
+
+    slideIndex++;
+
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+
+    slides[slideIndex - 1].classList.add("active");
+    dots[slideIndex - 1].classList.add("active");
+
+    setTimeout(showSlides, 5000);
 }
 
 // Eventos
@@ -33,3 +61,6 @@ allLinks.forEach((link) => {
 
     link.addEventListener("click", smoothScroll);
 });
+
+// Inicialização
+showSlides();
