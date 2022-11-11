@@ -627,7 +627,7 @@ i {
   }
 
   #team h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .employees {
@@ -656,7 +656,7 @@ i {
     flex-wrap: wrap;
   }
 
-  .footer i {
+  #footer i {
     font-size: 2rem;
     padding: 1rem;
   }
